@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <style>
+        body{
+            margin:0;
+            background-color:#f1f2f6;
+        }
+        nav {
+            padding:15px;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items:center;
+        }
+
+            nav > ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                list-style: none;
+            }
+
+        .nav-list-item {
+            margin: 0 10px;
+        }
+        .nav-list-item > a{
+            font-size:18px;
+            color:black;
+            text-decoration:none;
+        }
+        .nav-logo{
+            font-size:22px;
+        }
+        .content{
+            width:70%;
+            margin:0 auto;
+            margin-top:50px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <label class="nav-logo"> Kitapsis </label>
+        <ul>
+            <li class="nav-list-item">
+                <a href="/Kitap/Kitaplar">Tüm Kitaplar</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="/Kitap/Kitaplarim">Kitaplarım</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="/Kitap/KitapEkle"> Kitap Ekle</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="/Kullanici/Cikis">Çıkış Yap</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        @RenderBody()
+    </div>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿*{
+    box-sizing:border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #5352ed;
+}
+
+.kutu {
+    padding: 30px;
+    width: 300px;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+}
+
+label {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+input {
+    width: 100%;
+    padding: 4px 3px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+button {
+    margin: 10px 0;
+    padding: 5px 10px;
+}
+
+.baslik {
+    margin-top: 15px;
+    margin-bottom: 45px;
+    text-align: center;
+}
