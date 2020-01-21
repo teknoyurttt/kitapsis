@@ -10,17 +10,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Kitapsis</title>
+    <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
     <link href="~/Content/kullanici-giris.css" rel="stylesheet" type="text/css" />
 </head>
 <body> 
     <div class="kutu">
         <h4 class="baslik">KİTAPSİS</h4>
-        <form action="/" method="post">
+        <form action="/Kullanici/Giris" method="post">
             <label> Kullanıcı Adı </label>
             <input type="text" name="kullaniciAdi" autocomplete="off" autofocus/>
             <label>Şifre</label>
-            <input type="password" name="name" value="" />
-            <button type="submit" class="">Giriş</button>
+            <input type="password" name="sifre" value="" />
+            <div class="buton-container">
+                <button type="submit" class="">Giriş</button>
+            </div>
         </form>
     </div>
 </body>

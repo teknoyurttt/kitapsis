@@ -2,17 +2,67 @@
 @{
     ViewBag.Title = "KitapEkle";
 }
+<style>
+    * {
+        box-sizing: border-box;
+    }
 
-<form action="/" method="post">
-    <label>Kitap Adı</label>
-    <input type="text" name="" value="" />
-    <label>Yazar</label>
-    <input type="text" name="" value="" />
-    <label>Sayfa Sayısı</label>
-    <input type="text" name="" value="" />
-    <label>Tür</label>
-    <input type="text" name="" value="" />
-    <label>ISBN Numarası</label>
-    <input type="text" name="" value="" />
-    <button type="submit">Ekle</button>
-</form>
+    .label {
+        margin: 17px 0;
+        padding-left: 5px;
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .input {
+        border: 2px solid black;
+        border-radius: 3px;
+        padding: 11px;
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        background-color: #f1f2f6;
+    }
+
+    .buton {
+        margin-top: 10px;
+        padding: 7px 14px;
+        font-size: 18px;
+        border: 2px solid black;
+        border-radius: 4px;
+    }
+
+    .wrapper {
+        width: 40%;
+        margin: 0 auto;
+        padding:30px;
+        border-radius:4px;
+        background-color:#f1f2f6;
+    }
+
+    .buton-wrap{
+        margin-top:20px;    
+        width:100%;
+        text-align:center;
+    }
+</style>
+<div class="wrapper">
+    <h2>Eklemek İstediğiniz Kitap Bilgilerini Giriniz</h2>
+    <form action="/" method="post">
+        <label class="label">Kitap Adı</label>
+        <input type="text" name="" value="" class="input" />
+        <label class="label">Yazar</label>
+        <input class="input" type="text" name="" value="" />
+        <label class="label">Sayfa Sayısı</label>
+        <input class="input" type="text" name="" value="" />
+        <label class="label">Tür</label>
+        <input class="input" type="text" name="" value="" />
+        <label class="label">ISBN Numarası</label>
+        <input class="input" type="text" name="" value="" />
+        <div class="buton-wrap">
+            <button class="buton" type="submit">Ekle</button>
+        </div>
+    </form>
+</div>

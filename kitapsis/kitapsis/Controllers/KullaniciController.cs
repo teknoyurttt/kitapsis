@@ -13,6 +13,13 @@ namespace kitapsis.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Giris(string kullaniciAdi, string sifre)
+        {
+            return RedirectToAction("Kitaplar", "Kitap");
+        }
+
         public ActionResult Cikis()
         {
             return RedirectToAction("Giris");

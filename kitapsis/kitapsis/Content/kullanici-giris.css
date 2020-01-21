@@ -1,5 +1,6 @@
-﻿*{
-    box-sizing:border-box;
+﻿* {
+    box-sizing: border-box;
+    font-family: 'Gelasio';
 }
 
 html {
@@ -7,16 +8,17 @@ html {
 }
 
 body {
+    margin:0; 
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-color: #5352ed;
+    background-color: #fbc531;
 }
 
 .kutu {
     padding: 30px;
-    width: 300px;
+    width: 400px;
     border-radius: 5px;
     background-color: #ecf0f1;
 }
@@ -25,22 +27,37 @@ label {
     display: block;
     width: 100%;
     margin-bottom: 12px;
+    font-size:18px;
+    padding-left:5px;
 }
 
 input {
-    width: 100%;
-    padding: 4px 3px;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 11px;
     display: block;
-    margin-bottom: 15px;
+    width: 100%;
+    font-size: 18px;
+    background-color: #f1f2f6; 
+    margin-bottom: 18px;  
 }
 
 button {
-    margin: 10px 0;
-    padding: 5px 10px;
+    margin: 20px 0;
+    padding: 7px 14px;
+    font-size: 18px;
+    border: 2px solid black;
+    border-radius: 4px;
 }
 
 .baslik {
     margin-top: 15px;
     margin-bottom: 45px;
+    text-align: center;
+    font-size:22px;
+} 
+
+.buton-container {
+    width: 100%;
     text-align: center;
 }

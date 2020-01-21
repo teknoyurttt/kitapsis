@@ -3,18 +3,28 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <title>@ViewBag.Title - Kitapsis</title>
     <style>
-        body{
-            margin:0;
-            background-color:#f1f2f6;
+        * {
+            box-sizing: border-box;
+            font-family: 'Gelasio';
         }
+
+        body {
+            margin: 0;
+            background-color: #f1f2f6;
+        }
+
         nav {
-            padding:15px;
-            width: 100%;
+            padding: 40px 15px;
             display: flex;
             justify-content: space-evenly;
-            align-items:center;
+            align-items: center;
         }
 
             nav > ul {
@@ -25,20 +35,74 @@
             }
 
         .nav-list-item {
-            margin: 0 10px;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
         }
-        .nav-list-item > a{
-            font-size:18px;
+
+            .nav-list-item > a {
+                font-size: 18px;
+                color: black;
+                text-decoration: none;
+            }
+
+        .nav-logo {
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .content {
+            width: 70%;
+            margin: 0 auto;
+            padding: 70px 0;
+            background-color: #fbc531;
+            color: black;
+        }
+
+        #dropdown {
+            position: relative;
+        }
+
+            #dropdown:after {
+                content: '\f078';
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                margin-left: 10px;
+            }
+
+        #dropdown-item { 
+            display:none;
+            padding: 15px;
+            border: 2px solid black;
+            border-radius: 4px;
+            margin-top: 10px;
+            width: 170px;
+            position: absolute;
+            background-color: #fbc531;
+        }
+
+            #dropdown-item > ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+
+        .dropdown-list-item {
+            font-size: 17px;
+            width:100%;
+            border-radius:3px;
+            margin: 10px 0;
+        }
+
+        .dropdown-list-item > a{
+            padding:7px 5px;
+            display:block;
+            text-decoration:none; 
             color:black;
-            text-decoration:none;
         }
-        .nav-logo{
-            font-size:22px;
-        }
-        .content{
-            width:70%;
-            margin:0 auto;
-            margin-top:50px;
+        .dropdown-list-item:hover{
+            background-color:#f1f2f6;
         }
     </style>
 </head>
@@ -47,17 +111,27 @@
     <nav>
         <label class="nav-logo"> Kitapsis </label>
         <ul>
-            <li class="nav-list-item">
-                <a href="/Kitap/Kitaplar">Tüm Kitaplar</a>
+            <li>
+                <a href="/Kitap/Kitaplar" class="nav-list-item">Tüm Kitaplar</a>
             </li>
-            <li class="nav-list-item">
-                <a href="/Kitap/Kitaplarim">Kitaplarım</a>
+            <li>
+                <a href="/Kitap/Kitaplarim" class="nav-list-item">Kitaplarım</a>
             </li>
-            <li class="nav-list-item">
-                <a href="/Kitap/KitapEkle"> Kitap Ekle</a>
+            <li>
+                <a href="/Kitap/KitapEkle" class="nav-list-item"> Kitap Ekle</a>
             </li>
-            <li class="nav-list-item">
-                <a href="/Kullanici/Cikis">Çıkış Yap</a>
+            <li>
+                <a href="javascript:;" class="nav-list-item" id="dropdown">Beker</a>
+                <div id="dropdown-item">
+                    <ul>
+                        <li class="dropdown-list-item">
+                            <a href="javascript:;">Seçenekler</a> 
+                        </li>
+                        <li class="dropdown-list-item">
+                            <a href="/Kullanici/Cikis">Çıkış Yap</a> 
+                        </li>
+                    </ul>
+                </div>
             </li>
         </ul>
     </nav>
@@ -65,7 +139,12 @@
     <div class="content">
         @RenderBody()
     </div>
-
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script>
+        $('#dropdown').on('click', (e) => {
+            e.preventDefault();
+            $('#dropdown-item').toggle();
+        });
+    </script>
 </body>
 </html>
