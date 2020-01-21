@@ -13,5 +13,9 @@ namespace kitapsis.Controllers
         {
             return View();
         }
+        public ActionResult Cikis()
+        {
+            return RedirectToAction("Giris");
+        }
     }
 }

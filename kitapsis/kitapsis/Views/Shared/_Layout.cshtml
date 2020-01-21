@@ -4,36 +4,68 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <style>
+        body{
+            margin:0;
+            background-color:#f1f2f6;
+        }
+        nav {
+            padding:15px;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items:center;
+        }
+
+            nav > ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                list-style: none;
+            }
+
+        .nav-list-item {
+            margin: 0 10px;
+        }
+        .nav-list-item > a{
+            font-size:18px;
+            color:black;
+            text-decoration:none;
+        }
+        .nav-logo{
+            font-size:22px;
+        }
+        .content{
+            width:70%;
+            margin:0 auto;
+            margin-top:50px;
+        }
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
-        </div>
-    </div>
 
-    <div class="container body-content">
+    <nav>
+        <label class="nav-logo"> Kitapsis </label>
+        <ul>
+            <li class="nav-list-item">
+                <a href="/Kitap/Kitaplar">Tüm Kitaplar</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="/Kitap/Kitaplarim">Kitaplarım</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="/Kitap/KitapEkle"> Kitap Ekle</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="/Kullanici/Cikis">Çıkış Yap</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
 
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
